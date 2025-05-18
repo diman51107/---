@@ -2,7 +2,7 @@ from pygame import *
 
 back = (200, 255, 255)
 win_width = 600
-win_height = 500
+win_height = 600
 
 window = display.set_mode((win_height, win_width))
 window.fill(back)
@@ -32,7 +32,7 @@ class Player(GameSprite):
     def update_r(self):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.y > 5:
-            self.rect.x -= self.speed
+            self.rect.y -= self.speed
         if keys[K_DOWN] and self.rect.y < win_height - 80:
             self.rect.y += self.speed
     def update_l(self):
@@ -47,9 +47,9 @@ game = True
 finish = False
 clock = time.Clock()
 FPS = 60
-racket1 = Player('racket1.png', 30, 200, 4, 50, 150)
-racket2 = Player('racket1.png', 520, 200, 4, 50, 150)
-ball = GameSprite('images.png', 200, 200, 4, 50, 50)
+racket1 = Player('racket1.png', 10, 200, 50, 200, 10)
+racket2 = Player('racket1.png', 540, 200, 50, 200, 10)
+ball = GameSprite('images.png', 200, 200, 50, 50, 50)
 speed_x = 3
 speed_y = 3
 font.init()
